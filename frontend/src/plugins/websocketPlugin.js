@@ -4,7 +4,6 @@ const socket = io('http://localhost:5000')
 
 export default function(store) {
   socket.on('disconnect', () => {
-    console.log('connect failed')
     store.commit('setLoad', false)
     store.commit('setError', true)
   })
